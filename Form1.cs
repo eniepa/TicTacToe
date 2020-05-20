@@ -18,12 +18,23 @@ namespace TicTacToe
         {
             InitializeComponent();
             InitializeGrid();
+            InitializeCell();
         }
 
         private void InitializeGrid()
         {
             Grid.BackColor = Color.LightCoral;
             Grid.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset;
+        }
+
+        private void InitializeCell()
+        {
+            string labelName;
+            for (int i=1; i<=9; i++)
+            {
+                labelName = "label" + i;
+                Grid.Controls[labelName].Text = string.Empty;
+            }
         }
 
         private void Player_Click(object sender, EventArgs e)
